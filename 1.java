@@ -1,15 +1,17 @@
 import java.util.*;
 public class ty {
-    public static void main(String a[]){
-       Scanner sc=new Scanner(System.in);
-        String s1=sc.nextLine();
-        String s2=sc.nextLine();
-        int count=0;
-        char c1=s2.charAt(s2.length()-1);
-        for(int i=0;i<s1.length();i++){
-            if(s1.charAt(i)==c1){
-                count++;
-            }
+    public static void main(String a[]){ 
+Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int x=0;
+        String s1="",s2="";
+        while(n>0){
+            x=n%3;
+            n=n/3;
+            s1=String.valueOf(x);
+            s2=s1+s2;
         }
-        }
-        }
+        int i=Integer.parseInt(s2);
+        System.out.print(i);
+    }
+}
