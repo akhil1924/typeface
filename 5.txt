@@ -1,0 +1,18 @@
+Introduction:
+Web scraping, often called web crawling or web spidering, or “programmatically going over a collection of web pages and extracting data,” is a powerful tool for working with data on the web.
+With a web scraper, you can mine data about a set of products, get a large corpus of text or quantitative data to play around with, get data from a site without an official API, or just satisfy your own personal curiosity.
+Step 1 — Creating a Basic Scraper
+Scraping is a two step process:
+You systematically find and download web pages.
+You take those web pages and extract information from them.
+Both of those steps can be implemented in a number of ways in many languages.
+You can build a scraper from scratch using modules or libraries provided by your programming language, but then you have to deal with some potential headaches as your scraper grows more complex. For example, you’ll need to handle concurrency so you can crawl more than one page at a time. You’ll probably want to figure out how to transform your scraped data into different formats like CSV, XML, or JSON. And you’ll sometimes have to deal with sites that require specific setting
+pip install scrapy
+mkdir brickset-scraper
+cd brickset-scraper
+touch scraper.py
+We’ll start by making a very basic scraper that uses Scrapy as its foundation. To do that, we’ll create a Python class that subclasses scrapy.Spider, a basic spider class provided by Scrapy. This class will have two required attributes:
+import scrapy
+class BrickSetSpider(scrapy.Spider):
+    name = "brickset_spider"
+    start_urls = ['http://brickset.com/sets/year-2016']
